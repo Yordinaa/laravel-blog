@@ -23,7 +23,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## Postman Collection
 
-[Download Postman Collection](https://raw.githubusercontent.com/Yordinaa/laravel-blog/refs/heads/main/Laravel%20Blog%20API%20postman_collection.json)
+[Download Postman Collection](C:\Users\yordi\blog\Laravel Blog API postman_collection.json)
 
 ## Learning Laravel
 
