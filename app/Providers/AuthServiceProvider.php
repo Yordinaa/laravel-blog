@@ -8,8 +8,10 @@ use App\Policies\PostPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
+    use App\Policies\PostPolicy;
+
     protected $policies = [
-        Post::class => PostPolicy::class, // Map Post model to PostPolicy
+        Post::class => PostPolicy::class,
     ];
 
     public function boot()

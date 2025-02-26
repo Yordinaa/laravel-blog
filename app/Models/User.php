@@ -11,8 +11,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use HasFactory; 
-    use HasApiTokens; // Add this line
+    use HasFactory;
+    use HasApiTokens; 
     use Notifiable;
 
     /**
@@ -25,7 +25,10 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

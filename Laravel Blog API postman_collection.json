@@ -7,45 +7,29 @@
 	},
 	"item": [
 		{
-			"name": "user register",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Test User 3\",\r\n  \"email\": \"test3@example.com\",\r\n  \"password\": \"password3\",\r\n  \"password_confirmation\": \"password3\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/register",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"register"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "user login",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|WoQ32qmExoVDS0X9gdMGX0304P8ckTI8ynMBs1td1b1a2d01",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\r\n  \"email\": \"test3@example.com\",\r\n  \"password\": \"password3\"\r\n \r\n}",
+					"raw": "{\r\n  \"email\": \"johndoe@example.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,22 +55,19 @@
 			"response": []
 		},
 		{
-			"name": "get single post",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "post a blog",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "7|KtAem1TGGydaYV7FmxoT0FQ93z4IDUiYRKAe6HYn76561686",
+							"value": "3|WoQ32qmExoVDS0X9gdMGX0304P8ckTI8ynMBs1td1b1a2d01",
 							"type": "string"
 						}
 					]
 				},
-				"method": "GET",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Accept",
@@ -122,7 +103,7 @@
 			"response": []
 		},
 		{
-			"name": "get single post",
+			"name": "single post",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -132,7 +113,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "3|wFw3FXyYYyh6VUtIvjNZ8LIIILeIJwaEw3cFZAAn0f9cb588",
+							"value": "3|WoQ32qmExoVDS0X9gdMGX0304P8ckTI8ynMBs1td1b1a2d01",
 							"type": "string"
 						}
 					]
@@ -155,7 +136,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/posts/1",
+					"raw": "http://127.0.0.1:8000/api/posts/12",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -167,7 +148,7 @@
 					"path": [
 						"api",
 						"posts",
-						"1"
+						"12"
 					]
 				}
 			},
@@ -181,7 +162,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "3|wFw3FXyYYyh6VUtIvjNZ8LIIILeIJwaEw3cFZAAn0f9cb588",
+							"value": "3|WoQ32qmExoVDS0X9gdMGX0304P8ckTI8ynMBs1td1b1a2d01",
 							"type": "string"
 						}
 					]
@@ -204,7 +185,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/posts/1",
+					"raw": "http://127.0.0.1:8000/api/posts/12",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -216,7 +197,7 @@
 					"path": [
 						"api",
 						"posts",
-						"1"
+						"12"
 					]
 				}
 			},
@@ -230,7 +211,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "3|wFw3FXyYYyh6VUtIvjNZ8LIIILeIJwaEw3cFZAAn0f9cb588",
+							"value": "3|WoQ32qmExoVDS0X9gdMGX0304P8ckTI8ynMBs1td1b1a2d01",
 							"type": "string"
 						}
 					]
@@ -253,7 +234,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/posts/1",
+					"raw": "http://127.0.0.1:8000/api/posts/12",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -265,7 +246,52 @@
 					"path": [
 						"api",
 						"posts",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|ShO86P8TvzbSzuWjqZEvkrQtm3nz4VFGSwUbWdKf9357a70d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"johndoe@example.com\",\r\n  \"password\": \"password123\",\r\n  \"password_confirmation\": \"password123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
 						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
 					]
 				}
 			},
